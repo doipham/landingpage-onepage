@@ -3,31 +3,79 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.box-shadow {
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+}
+
+.rectangleDiv {
+  position: relative;
+  border-radius: 12px;
+  width: 100%;
+  background: linear-gradient(90.15deg, #70DCA8.95%, #49bce7);
+  height: 260px;
+}
+
+.swiper-button-next {
+  background-image: url('../../public/next3.svg') !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.swiper-button-prev {
+  background-image: url('../../public//prev3.svg') !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.swiper-button-prev::after {
+  display: none;
+}
+.swiper-button-next::after {
+  display: none;
+}
+.swiper-button-disabled {
+  display: none;
+  background: none;
+}
+
+ul {
+  --icon-space: 1.3em;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding-bottom: 4px;
+  padding-left: var(--icon-space);
+}
+
+li:before {
+  content: url('../../public/tick.svg');
+  display: inline-block;
+  margin-left: calc(var(--icon-space) * -1);
+  width: var(--icon-space);
+  padding-bottom: 8px;
+}
+
+.btnScroll {
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 5;
+  position: fixed;
+  padding: 12px;
+  transition: transform 0.3s;
+  background-color: #6b7280 0.6;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  border-radius: 4px;
+}
+.hiddentBtn {
+  transform: translateY(100px);
+}
+.blockBtn {
+  transform: translateY(0);
 }
